@@ -7,7 +7,6 @@ def have_a_word(l):
         return random.choice([i for i in all_words if len(i) == l])
 
 word = have_a_word(5)
-print(word)
 #six tries given
 i = 0 
 while i < 6:
