@@ -1,9 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[6]:
-
-
+#import appropriate modules 
 import random
 #takes a random five letter word from an online file with all the words in the english language
 def have_a_word(l):
@@ -65,10 +60,3 @@ else:
         print(f'It took you 1 try.')
     else: 
         print(f'It took you {x} tries.')
-
-
-# In[ ]:
-
-
-
-
