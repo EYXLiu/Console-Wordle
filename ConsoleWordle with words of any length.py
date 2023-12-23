@@ -15,7 +15,7 @@ while i < 6:
     #creates a list of the characters in the inputted word
     inputtedlist = list(inputted)
     #makes an output list of 0 of length of the word 
-    outputlist = [0]*len(charlist)
+    outputlist = [0]*len(inputted)
     #compares each letter, if the two letters match, then the output list is set to 2, and the corresponding letter is dropped from the random chosen words list
     #as to not be overwritten 
     #takes the minimum of the two lengths, as not to check for indexes that don't exist 
@@ -25,10 +25,10 @@ while i < 6:
             charlist[j] = ''
     #then, check for if the character isn't in the right spot, if so set output list to 1 and drop the corresponding letter 
     for k in range(len(inputtedlist)):
-        if inputted[k] in charlist:
+        if inputted[k] in charlist and charlist[k] != '':
             outputlist[k] = 1
             #as before, as not to let the character be overwritten 
-            charlist[charlist.index(inputtedlist[k])] = ''
+            charlist[charlist.index(inputtedlist[k])] = ' '
     #corresponding outputs, green for right spot, yellow for exists but incorrect spot, red for does not exist in the word
     for l in outputlist:
         if l == 2:
@@ -38,6 +38,10 @@ while i < 6:
         else:
             print("\U0001F7E5", end='')
     print("")
+    if len(inputted) < len(word):
+        print("Not enough letters")
+    elif len(inputted) > len(word):
+        print("Too many letters")
     #if the sum of the outputlist is equal to 2 times the length of the outputlist, then all characters are correct 
     #set x to the number of tries and i to 7 to exist the loop 
     if sum(outputlist) == 2*len(outputlist):
