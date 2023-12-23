@@ -25,7 +25,8 @@ while i < 6:
             charlist[j] = ''
     #then, check for if the character isn't in the right spot, if so set output list to 1 and drop the corresponding letter 
     for k in range(len(inputtedlist)):
-        if inputted[k] in charlist and charlist[k] != '':
+        #need to make sure that the item isn't already in the right spot, so check if outputlist at that location is equal to 2 
+        if inputted[k] in charlist and outputlist[k] != 2:
             outputlist[k] = 1
             #as before, as not to let the character be overwritten 
             charlist[charlist.index(inputtedlist[k])] = ' '
